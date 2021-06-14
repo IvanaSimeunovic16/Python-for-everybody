@@ -1,0 +1,51 @@
+# Exercise 1: Rewrite your pay computation with time-and-a-half for overtime and create a function called computepay which takes two parameters
+# (hours and rate).
+
+# Enter Hours: 45
+# Enter Rate: 10
+# Pay: 475.0
+
+hours = float(input('Enter hours:'))
+rate = float(input('Enter rate:'))
+if hours <= 40:
+    def computepay(hours, rate):
+        pay = rate*hours
+        return pay
+    x = computepay(hours, rate)
+    print('Pay is: ', x)
+else:
+    overhours = (hours) - 40
+    def computepay(overhours, rate):
+        pay1 = (hours-40)*(1.5 * rate) + 40*rate
+        return pay1
+    y = computepay(overhours, rate)
+    print('Pay1 is: ', y)
+    
+
+# Exercise 2: Rewrite the grade program from the previous chapter using a function called computegrade that takes a score as its parameter and
+# returns a grade as a string.
+# Score Grade
+# >= 0.9 A
+# >= 0.8 B
+# >= 0.7 C
+# >= 0.6 D
+# < 0.6 F
+
+score = float(input('Input your score: '))
+def computegrade(score):
+    if score > 0 and score <= 0.6:
+        print('F')
+    elif score >= 0.6 and score <=0.7:
+        print('D')
+    elif score >= 0.7 and score <= 0.8:
+        print('D')
+    elif score >= 0.8 and score <= 0.9:
+        print('B')
+    elif score >= 0.9 and score<= 1.0:
+        print('A')
+    else:
+        print('Error, score is out of range!')
+
+computegrade(score)
+
+
